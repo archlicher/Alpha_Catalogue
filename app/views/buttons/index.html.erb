@@ -1,0 +1,26 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Type of button</th>
+      <th scope="col">Size</th>
+      <th scope="col">Count of buttons</th>
+      <th scope="col">Edit count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @buttons.each do |button| %>
+      <tr>
+        <th scope="row"><%= link_to button.id, button %></th>
+        <td><%= button.type_of_button %></td>
+        <td><%= button.size %></td>
+        <td><%= button.count %></td>
+        <td><%= link_to 'Edit count', edit_button_path(button), class: 'btn btn-warning' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Button', new_button_path, class: "btn btn-outline-dark" %>

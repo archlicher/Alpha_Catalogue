@@ -1,0 +1,27 @@
+<%= form_with(model: @button, local: true) do |form| %>
+  <% if @button.errors.any? %>
+    <div id="error_explanation" style="font-color: red;">
+      <h2><%= pluralize(@button.errors.count, "error") %> prohibited this button from being saved:</h2>
+
+      <ul>
+      <% @button.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <input name="type_of_button" type="text" placeholder="Type of button" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="size" type="number" min="1" placeholder="Size" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="count" type="number" min="1" placeholder="Count" class="form-control">
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+  </div>
+<% end %>
