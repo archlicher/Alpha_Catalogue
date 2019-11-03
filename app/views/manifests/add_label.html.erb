@@ -1,0 +1,27 @@
+<h1><%= @article.id %> <%= @article.title %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Label</th>
+      <th scope="col">Length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @article.label_manifests.each do |l_m| %>
+      <% label = Label.find(l_m.label_id) %>
+      <tr>
+        <th scope="row"><%= label.id %></th>
+        <td><%= label.measure %></td>
+        <td><%= l_m.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if @article.label_manifests.count < 3 %>
+  <%= link_to 'Add label', label_manifests_path, class: 'btn btn-outline-success' %>
+<% end %>
+<%= link_to 'Add rubber', rubber_manifests_path, class: 'btn btn-dark' %>

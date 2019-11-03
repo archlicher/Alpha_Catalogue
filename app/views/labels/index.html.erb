@@ -1,0 +1,26 @@
+<h1>Labels</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Measure of labels</th>
+      <th scope="col">Count of labels</th>
+      <th scope="col">Edit count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @labels.each do |label| %>
+      <tr>
+        <th scope="row"><%= link_to label.id, label %></th>
+        <td><%= label.measure %></td>
+        <td><%= label.count %></td>
+        <td><%= link_to 'Edit count', edit_label_path(label), class: 'btn btn-warning' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Label', new_label_path, class: "btn btn-outline-dark" %>

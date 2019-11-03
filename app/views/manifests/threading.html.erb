@@ -1,0 +1,34 @@
+<h1><%= @article.id %> <%= @article.title %></h1>
+<h2>New threading manifests</h2>
+<%= form_with url: threading_create_manifests_path do |form| %>
+  <% if @threading_manifest && @threading_manifest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@threading_manifest.errors.count, "error") %> prohibited this threading_manifest from being saved:</h2>
+
+      <ul>
+      <% @threading_manifest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.hidden_field :article_id, value: @article.id %>
+
+  <% threadings = Threadings.all %>
+
+  <div class="form-group">
+    <select name="label_id" class="custom-select">
+      <% threadings.each do |t| %>
+        <option value="<%= t.id %>"><%= t.color %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input name="count" type="text" class="form-control">
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Label <%= @label.id %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Measure of label</th>
+      <th scope="col">Count of label</th>
+      <th scope="col">Edit count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @label.measure %></th>
+      <td><%= @label.count %></td>
+      <td><%= link_to 'Edit count', edit_label_path(@label), class: 'btn btn-warning' %></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <%= link_to 'All labels', labels_path, class: 'btn btn-info' %>
+</p>

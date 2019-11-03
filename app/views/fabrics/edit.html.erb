@@ -1,0 +1,34 @@
+<h1>Edit fabric <%= @fabric.id %> <%= @fabric.fabric %></h1>
+
+<%= form_with(model: @fabric, local: true) do |form| %>
+  <% if @fabric.errors.any? %>
+    <div id="error_explanation" style="font-color: red;">
+      <h2><%= pluralize(@fabric.errors.count, "error") %> prohibited this fabric from being saved:</h2>
+
+      <ul>
+      <% @fabric.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>Current price: <%= @fabric.price %></h3>
+  <div class="form-group">
+    <input name="price" type="text" value="<%= @fabric.price %>" class="form-control">
+  </div>
+
+  <h3>Current count <%= @fabric.count %></h3>
+  <div class="form-group">
+    <input name="count" type="text" placeholder="Count" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <input type="checkbox" name="substract"> Substract
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+    <%= render 'buttons', fabric: @fabric %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<h1>Clients</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Accountable Person</th>
+      <th scope="col">BULSTAT</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= link_to client.id %></td>
+        <td><%= client.name %></td>
+        <td><%= client.accountable_person %></td>
+        <td><%= client.bulstat %></td>
+        <td><%= client.address %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Create client', new_client_path, class: 'btn btn-dark' %>

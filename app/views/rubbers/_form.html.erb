@@ -1,0 +1,27 @@
+<%= form_with(model: @rubber, local: true) do |form| %>
+  <% if @rubber && @rubber.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rubber.errors.count, "error") %> prohibited this rubber from being saved:</h2>
+
+      <ul>
+      <% @rubber.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <input name="color" type="text" placeholder="Rubber color" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="width" type="number" step="0.01" placeholder="Rubber width" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="count" type="number" min="1" placeholder="Rubber count" class="form-control">
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+  </div>
+<% end %>

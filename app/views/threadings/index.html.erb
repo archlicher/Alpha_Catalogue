@@ -1,0 +1,26 @@
+<h1>Threadings</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Threading color</th>
+      <th scope="col">Count</th>
+      <th scope="col">Threading count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @threadings.each do |threading| %>
+      <tr>
+        <th scope="row"><%= link_to threading.id, threading %></th>
+        <td><%= threading.color %></td>
+        <td><%= threading.count %> meters</td>
+        <td><%= link_to 'Edit count', edit_threading_path(threading), class: 'btn btn-warning' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New threading', new_threading_path, class: "btn btn-outline-dark" %>

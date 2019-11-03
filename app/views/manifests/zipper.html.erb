@@ -1,0 +1,34 @@
+<h1><%= @article.id %> <%= @article.title %></h1>
+<h2>New zipper manifests</h2>
+<%= form_with url: zipper_create_manifests_path do |form| %>
+  <% if @zipper_manifest && @zipper_manifest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zipper_manifest.errors.count, "error") %> prohibited this zipper_manifest from being saved:</h2>
+
+      <ul>
+      <% @zipper_manifest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.hidden_field :article_id, value: @article.id %>
+
+  <% zippers = Zipper.all %>
+
+  <div class="form-group">
+    <select name="zipper_id" class="custom-select">
+      <% zippers.each do |z| %>
+        <option value="<%= z.id %>"><%= z.name %> / <%= z.zipper_length %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input name="count" type="text" class="form-control">
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+  </div>
+<% end %>

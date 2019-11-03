@@ -1,0 +1,26 @@
+<h1>Rubbers</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Rubber color</th>
+      <th scope="col">Rubber width</th>
+      <th scope="col">Rubber count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rubbers.each do |rubber| %>
+      <tr>
+        <th scope="row"><%= link_to rubber.id, rubber %></th>
+        <td><%= rubber.color %></td>
+        <td><%= rubber.count %> meters</td>
+        <td><%= link_to 'Edit count', edit_rubber_path(rubber), class: 'btn btn-warning' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New rubber', new_rubber_path, class: "btn btn-outline-dark" %>

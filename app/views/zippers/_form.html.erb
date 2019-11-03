@@ -1,0 +1,27 @@
+<%= form_with(model: @zipper, local: true) do |form| %>
+  <% if @zipper && @zipper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zipper.errors.count, "error") %> prohibited this zipper from being saved:</h2>
+
+      <ul>
+      <% @zipper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <input name="name" type="text" placeholder="Zipper name" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="zipper_length" type="number" min="1" placeholder="Zipper length" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="count" type="number" min="1" placeholder="Count" class="form-control">
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+  </div>
+<% end %>

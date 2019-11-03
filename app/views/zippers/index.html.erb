@@ -1,0 +1,26 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Zipper name</th>
+      <th scope="col">Zipper length</th>
+      <th scope="col">Zipper count</th>
+      <th scope="col">Edit zipper count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @zippers.each do |zipper| %>
+      <tr>
+        <th scope="row"><%= link_to zipper.id, zipper %></th>
+        <td><%= zipper.name %></td>
+        <td><%= zipper.zipper_length %> sm</td>
+        <td><%= zipper.count %></td>
+        <td><%= link_to 'Edit zipper count', edit_zipper_path(zipper), class: 'btn btn-warning' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New zipper', new_zipper_path, class: "btn btn-outline-dark" %>

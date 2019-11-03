@@ -1,0 +1,23 @@
+<h1>Zipper <%= @zipper.id %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Zipper name</th>
+      <th scope="col">Zipper length</th>
+      <th scope="col">Count</th>
+      <th scope="col">Edit count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @zipper.name %></th>
+      <td><%= @zipper.zipper_length %> sm</td>
+      <td><%= @zipper.count %></td>
+      <td><%= link_to 'Edit count', edit_zipper_path(@zipper), class: 'btn btn-warning' %></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <%= link_to 'All zippers', zippers_path, class: 'btn btn-info' %>
+</p>

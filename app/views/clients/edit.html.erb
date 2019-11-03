@@ -1,0 +1,9 @@
+<h1>Edit <%= @client.id %> <%= @client.name %></h1>
+
+<%= render 'form', client: @client %>
+
+<br>
+
+<%= link_to "Back <%= @client.id %> <%= @client.name %>", client_path, class: "btn btn-outline-dark" %>
+<%= link_to 'Back to all clients', clients_path, class: "btn btn-dark" %>
+

@@ -1,0 +1,21 @@
+<h1>Threading <%= @threading.id %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Threading color</th>
+      <th scope="col">Count</th>
+      <th scope="col">Edit count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @threading.color %></th>
+      <td><%= @threading.count %> meters</td>
+      <td><%= link_to 'Edit count', edit_threading_path(@threading), class: 'btn btn-warning' %></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <%= link_to 'All threadings', threadings_path, class: 'btn btn-info' %>
+</p>

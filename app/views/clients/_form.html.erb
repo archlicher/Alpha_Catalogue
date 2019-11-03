@@ -1,0 +1,30 @@
+<%= form_with(model: @client, local: true) do |form| %>
+  <% if @client && @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <input name="name" type="text" placeholder="Company name" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="accountable_person" type="text" placeholder="Accountable person" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="bulstat" type="text" placeholder="BULSTAT" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="address" type="text" placeholder="Address" class="form-control">
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<h1><%= @article.id %> <%= @article.title %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fabric</th>
+      <th scope="col">Length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @article.fabric_manifests.each do |f_m| %>
+      <% fabric = Fabric.find(f_m.fabric_id) %>
+      <tr>
+        <th scope="row"><%= fabric.id %></th>
+        <td><%= fabric.fabric %></td>
+        <td><%= f_m.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if @article.fabric_manifests.count < 3 %>
+  <%= link_to 'Add fabric', fabric_manifests_path, class: 'btn btn-outline-success' %>
+<% end %>
+<%= link_to 'Add button', button_manifests_path, class: 'btn btn-dark' %>

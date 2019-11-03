@@ -1,0 +1,27 @@
+<h1><%= @article.id %> <%= @article.title %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Button</th>
+      <th scope="col">Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @article.button_manifests.each do |b_m| %>
+      <% button = Button.find(b_m.button_id) %>
+      <tr>
+        <th scope="row"><%= button.id %></th>
+        <td><%= button.type_of_button %></td>
+        <td><%= b_m.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if @article.button_manifests.count < 3 %>
+  <%= link_to 'Add button', button_manifests_path, class: 'btn btn-outline-success' %>
+<% end %>
+<%= link_to 'Add label', label_manifests_path, class: 'btn btn-dark' %>

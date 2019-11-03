@@ -1,0 +1,23 @@
+<h1>Rubber <%= @rubber.id %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Rubber color</th>
+      <th scope="col">Rubber width</th>
+      <th scope="col">Rubber count</th>
+      <th scope="col">Edit count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @rubber.color %></th>
+      <td><%= @rubber.width %></td>
+      <td><%= @rubber.count %></td>
+      <td><%= link_to 'Edit count', edit_rubber_path(@rubber), class: 'btn btn-warning' %></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <%= link_to 'All rubbers', rubbers_path, class: 'btn btn-info' %>
+</p>

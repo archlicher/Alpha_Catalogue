@@ -1,0 +1,38 @@
+<h1>Fabrics</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fabric</th>
+      <th scope="col">Composition</th>
+      <th scope="col">Weigth</th>
+      <th scope="col">Color</th>
+      <th scope="col">Measure</th>
+      <th scope="col">Delivery date</th>
+      <th scope="col">Count</th>
+      <th scope="col">Price</th>
+      <th scope="col">Edit count & price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fabrics.each do |fabric| %>
+      <tr>
+        <th scope="row"><%= link_to fabric.id, fabric %></th>
+        <td><%= fabric.fabric %></td>
+        <td><%= fabric.composition %></td>
+        <td><%= fabric.weigth %></td>
+        <td><%= fabric.color %></td>
+        <td><%= fabric.measure %></td>
+        <td><%= fabric.updated_at.nil? ? fabric.created_at.strftime("%Y-%m-%d") : fabric.updated_at.strftime("%Y-%m-%d") %></td>
+        <td><%= fabric.count %></td>
+        <td><%= fabric.price %></td>
+        <td><%= link_to 'Edit count & price', edit_fabric_path(fabric), class: 'btn btn-warning' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fabric', new_fabric_path, class: "btn btn-outline-dark" %>

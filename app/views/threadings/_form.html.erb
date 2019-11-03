@@ -1,0 +1,24 @@
+<%= form_with(model: @threading, local: true) do |form| %>
+  <% if @threading && @threading.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@threading.errors.count, "error") %> prohibited this threading from being saved:</h2>
+
+      <ul>
+      <% @threading.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <input name="color" type="text" placeholder="Color" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="count" type="number" min="1" placeholder="Count" class="form-control">
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+  </div>
+<% end %>

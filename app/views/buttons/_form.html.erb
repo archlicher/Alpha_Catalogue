@@ -1,6 +1,6 @@
 <%= form_with(model: @button, local: true) do |form| %>
-  <% if @button.errors.any? %>
-    <div id="error_explanation" style="font-color: red;">
+  <% if @button && @button.errors.any? %>
+    <div id="error_explanation">
       <h2><%= pluralize(@button.errors.count, "error") %> prohibited this button from being saved:</h2>
 
       <ul>

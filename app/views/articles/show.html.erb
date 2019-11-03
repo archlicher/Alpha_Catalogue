@@ -1,0 +1,107 @@
+<h1><%= @article.id %> <%= @article.title %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fabric</th>
+      <th scope="col">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @article.fabric_manifests.each do |f_m| %>
+      <tr>
+        <th scope="row"><%= Fabric.find(f_m.fabric_id).id %></th>
+        <td><%= Fabric.find(f_m.fabric_id).fabric %></td>
+        <td><%= f_m.count %> meters</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Button</th>
+      <th scope="col">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td> pcs</td>
+      </tr>
+
+  </tbody>
+</table>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Label</th>
+      <th scope="col">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td> pcs</td>
+      </tr>
+
+  </tbody>
+</table>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Rubber</th>
+      <th scope="col">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td> meters</td>
+      </tr>
+
+  </tbody>
+</table>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Threading</th>
+      <th scope="col">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td> meters</td>
+      </tr>
+
+  </tbody>
+</table>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Zipper</th>
+      <th scope="col">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td> meters</td>
+      </tr>
+  </tbody>
+</table>

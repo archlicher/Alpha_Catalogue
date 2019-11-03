@@ -1,0 +1,22 @@
+<h1><%= @client.id %> <%= @client.name%></h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Company name</th>
+      <th scope="col">Accountable person</th>
+      <th scope="col">BULSTAT</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @client.name %></th>
+      <td><%= @client.accountable_person %></td>
+      <td><%= @client.bulstat %></td>
+      <td><%= @client.address %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit client', edit_client_path(@client), class: 'btn btn-outline-warning' %>
+<%= link_to 'Back to all clients', clients_path, class: "btn btn-outline-dark" %>

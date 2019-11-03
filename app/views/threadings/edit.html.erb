@@ -1,0 +1,29 @@
+<h1>Edit threading <%= @threading.id %> <%= @threading.color %></h1>
+<h3>Current count <%= @threading.count %></h3>
+
+<%= form_with(model: @threading, local: true) do |form| %>
+  <% if @threading.errors.any? %>
+    <div id="error_explanation" style="font-color: red;">
+      <h2><%= pluralize(@threading.errors.count, "error") %> prohibited this threading from being saved:</h2>
+
+      <ul>
+      <% @threading.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <input name="count" type="number" min="1" placeholder="Count" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <input type="checkbox" name="substract"> Substract
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark" %>
+    <%= render 'buttons', threading: @threading %>
+  </div>
+<% end %>

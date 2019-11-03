@@ -1,0 +1,24 @@
+<h1>Articles</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <th scope="row"><%= link_to article.id, article %></th>
+        <td><%= article.title %></td>
+        <td><%= article.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path, class: "btn btn-outline-dark" %>

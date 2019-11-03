@@ -1,0 +1,27 @@
+<h1><%= @article.id %> <%= @article.title %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Threading</th>
+      <th scope="col">Length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @article.threading_manifests.each do |t_m| %>
+      <% threading = Threading.find(t_m.label_id) %>
+      <tr>
+        <th scope="row"><%= threading.id %></th>
+        <td><%= threading.color %></td>
+        <td><%= t_m.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if @article.threading_manifests.count < 3 %>
+  <%= link_to 'Add threading', threading_manifests_path, class: 'btn btn-outline-success' %>
+<% end %>
+<%= link_to 'Add zipper', zipper_manifests_path, class: 'btn btn-dark' %>
