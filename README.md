@@ -27,25 +27,6 @@ Configure the rails new project to use mysql:
 
 Or follow the sequence shown by [Reuben Mallaby](https://stackoverflow.com/questions/5996834/how-to-install-ruby-on-rails-with-mysql-and-get-it-working-a-step-by-step-guide).
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be needed:
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-
 ## Authors
 
 * **Hristofor Todorov** - [archlicher](https://github.com/archlicher)
