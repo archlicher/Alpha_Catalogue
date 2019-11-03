@@ -22,7 +22,7 @@ Configure the rails new project to use mysql:
 
 ```
 1. gem install mysql2 -v 0.2.6
-2. rails new project_name -d mysql
+2. rails new alpha_catalogue -d mysql
 ```
 
 Or follow the sequence shown by [Reuben Mallaby](https://stackoverflow.com/questions/5996834/how-to-install-ruby-on-rails-with-mysql-and-get-it-working-a-step-by-step-guide).
