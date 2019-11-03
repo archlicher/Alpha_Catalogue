@@ -1,24 +1,55 @@
-# README
+# Alpha Catalogue
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Keep track of stock availability - from fabrics, buttons, zippers to a complete workwear.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+What things you need to install the software and how to install them.
 
-* Database creation
+On Windows:
 
-* Database initialization
+```
+1. install xampp
+2. install ruby - [ruby](https://rubyinstaller.org/)
+3. gem install rails
+```
 
-* How to run the test suite
+Configure the rails new project to use mysql:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+1. gem install mysql2 -v 0.2.6
+2. rails new project_name -d mysql
+```
 
-* Deployment instructions
+Or follow the sequence shown by [Reuben Mallaby](https://stackoverflow.com/questions/5996834/how-to-install-ruby-on-rails-with-mysql-and-get-it-working-a-step-by-step-guide).
 
-* ...
+### Installing
+
+A step by step series of examples that tell you how to get a development env running.
+
+Say what the step will be needed:
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo.
+
+
+## Authors
+
+* **Hristofor Todorov** - [archlicher](https://github.com/archlicher)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
