@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
+ruby '2.6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'webdrivers', '~> 4.1.3', '>= 4.1.3'
+
+# Fiddle
+gem 'fiddle', '~> 1.0.0', '>= 1.0.0'
 
 #PRY repl session
 gem 'pry', '~> 0.12.2'
